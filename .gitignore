@@ -1,0 +1,7 @@
+.env
+*.key
+*.pem
+*.db
+secrets/
+backups/
+.DS_Store
