@@ -1,7 +1,7 @@
 # 🗺️ nmap-reference
 
 > A clean, practical nmap reference guide for CTF players and security professionals.
-> Bookmark it, star it, share it. Take a look around for noobs, students, CTF players, and pros.  
+> Bookmark it, star it, share it. Take a look around for noobs, students, CTF players, and pros. Click the arrows, scroll.
 > Part of the SudoCode Pentesting Methodology Guide — by SudoChef.
 
 ![Documentation](https://img.shields.io/badge/Documentation-Complete-C9667A?style=flat-square)
