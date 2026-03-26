@@ -175,7 +175,7 @@ These tools work alongside nmap to give you a fuller picture.
 
 ---
 
-## 📋 Cheat Sheet
+## 📋 Beginners Cheat Sheet (Intermediate and Advanced see below ⬇️
 ```bash
 # Quick start — standard scan
 nmap -sV -sC -oN scan.txt <target>
@@ -206,7 +206,7 @@ nmap -sV -p 80,443,8080 --script http-enum <target>
 ### 🚩 Flags
 | File | What's inside |
 |---|---|
-| [Flag Overview & Complete Reference](flags/overview.md) | Every important flag, `-Pn`, `--min-rate`, smart CTF port strategy, top 20 ports |
+| [Flag Overview & Complete Reference](flags/overview.md) | Important flags, `-Pn`, `--min-rate`, smart CTF port strategy, top 20 ports |
 | [Reading & Parsing Output](flags/parsing.md) | How to read nmap results, grep tricks, extracting ports, XML integration |
 | [NSE Scripts — Nmap Scripting Engine](flags/nse-scripts.md) | Script categories, 600+ scripts, best scripts by scenario |
 
