@@ -201,4 +201,38 @@ nmap -sV -p 80,443,8080 --script http-enum <target>
 
 ---
 
+## 📁 Advanced Reference Index
+
+### 🚩 Flags
+| File | What's inside |
+|---|---|
+| [Flag Overview & Complete Reference](flags/overview.md) | Every important flag, `-Pn`, `--min-rate`, smart CTF port strategy, top 20 ports |
+| [Reading & Parsing Output](flags/parsing.md) | How to read nmap results, grep tricks, extracting ports, XML integration |
+| [NSE Scripts — Nmap Scripting Engine](flags/nse-scripts.md) | Script categories, 600+ scripts, best scripts by scenario |
+
+### 🍽️ Scan Combinations
+| File | What's inside |
+|---|---|
+| [Named Scans](scan-combos/named-scans.md) | The Standard, The Ghost, The Deep Dive, The Full Sweep, and more |
+| [Field Scans](scan-combos/field-scans.md) | Real scans used in CTF, school labs, research, and professional engagements |
+| [Advanced Techniques](scan-combos/advanced.md) | Pivot scanning, OS fingerprinting, decoys, firewall evasion, internal recon |
+| [What To Do With Your Results](scan-combos/what-next.md) | Post-scan workflow, service research, documentation habits |
+
+### 🔌 Ports
+| File | What's inside |
+|---|---|
+| [Common Ports Reference](ports/common-ports.md) | 25 common ports, what they are, and exactly what to do when you find them open |
+
+### ⚔️ CTF vs Professional
+| File | What's inside |
+|---|---|
+| [CTF vs Professional Engagement](ctf-vs-real/differences.md) | Mindset, methodology, rules, and the golden rule that keeps you out of trouble |
+
+### 🛠️ Other Tools
+| File | What's inside |
+|---|---|
+| [Complementary Tools](other-scanners/tools.md) | RustScan, Masscan, Nikto, Netcat — with Mac, Linux, and Windows install instructions |
+
+---
+
 *by SudoChef · Part of the SudoCode Pentesting Methodology Guide*
