@@ -16,11 +16,11 @@ A port is like a numbered door on a building. Every service that runs on a compu
 | 80 | HTTP | TCP | Open in browser, run Nikto, run gobuster |
 | 110 | POP3 | TCP | Email retrieval — try default credentials |
 | 111 | RPCBind | TCP/UDP | Run `rpcinfo -p <target>` to enumerate RPC services |
-| 135 | MSRPC | TCP | Windows RPC — run `enum4linux` |
-| 139 | NetBIOS | TCP | Windows file sharing — run `enum4linux` |
+| 135 | MSRPC | TCP | Windows RPC — run `enum4linux` (legacy — prefer `enum4linux-ng` or `netexec`) |
+| 139 | NetBIOS | TCP | Windows file sharing — run `enum4linux` (legacy — prefer `enum4linux-ng` or `netexec`) |
 | 143 | IMAP | TCP | Email — try default credentials |
 | 443 | HTTPS | TCP | Same as 80 — also check the SSL certificate for hostnames |
-| 445 | SMB | TCP | Windows file sharing — run `enum4linux`, check for EternalBlue (MS17-010) |
+| 445 | SMB | TCP | Windows file sharing — run `enum4linux` (legacy — prefer `enum4linux-ng` or `netexec`), check for EternalBlue (MS17-010) |
 | 1433 | MSSQL | TCP | Microsoft SQL Server — try `sa` with blank password |
 | 1521 | Oracle DB | TCP | Oracle database — try default credentials |
 | 2049 | NFS | TCP | Network file share — check for mountable shares: `showmount -e <target>` |

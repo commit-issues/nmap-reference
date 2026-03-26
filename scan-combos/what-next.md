@@ -53,7 +53,7 @@ curl http://<target>/robots.txt
 ```
 
 ### Port 445 — SMB
-- Run enum4linux for full enumeration
+- Run `enum4linux` (legacy — prefer `enum4linux-ng` or `netexec`)  for full enumeration
 - Check for EternalBlue with nmap script
 - List shares and try to access them
 ```bash

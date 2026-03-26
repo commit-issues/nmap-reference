@@ -19,8 +19,11 @@ nmap -O --osscan-guess <target>
 # OS + version + scripts + traceroute
 nmap -A <target>
 
-# Maximum OS detection effort
-nmap -O --osscan-limit --osscan-guess -sV --version-intensity 9 <target>
+# Limit OS detection to promising targets only
+nmap -O --osscan-limit <target>
+
+# Aggressive OS guessing when nmap isn't confident
+nmap -O --osscan-guess <target>
 ```
 
 > 💡 OS detection requires at least one open and one closed port to work accurately. If you only have open ports, results may be unreliable.
@@ -150,19 +153,33 @@ nmap -sW <target>
 
 ## ⚡ Speed Optimization for Large Scans
 ```bash
-# Fastest full port scan
+# Fastest full port scan — LOCAL LAB AND HTB ONLY
 nmap -p- --min-rate 10000 -T5 <target>
+```
+⚠️ Why you'd use it: Speed. On a local lab or HTB VPN where the network is stable and fast, this scan finds all 65535 ports in under 30 seconds instead of several minutes. When you're grinding CTFs and just need open ports fast before going deeper, that speed matters.
 
+⚠️ Why it breaks on real networks: The internet and corporate networks have latency, packet loss, and rate limiting. When you push 10,000 packets per second through a connection that can't handle it, packets get dropped silently — nmap never gets a response and marks those ports as closed. You could miss a critical open port entirely.
+The rule: Local LAN and HTB lab only. On real engagements use --min-rate 5000 -T4 for accuracy.
+
+```bash
 # Balanced speed + accuracy
 nmap -p- --min-rate 5000 -T4 <target>
 
+# Cap maximum packet rate — useful on unstable connections
+nmap -p- --max-rate 500 <target>
+
+# Use both min and max rate together for controlled speed
+nmap -p- --min-rate 1000 --max-rate 3000 -T4 <target>
+```
+> 💡 **`--max-rate`** caps how fast nmap sends packets. Useful when scanning over unstable VPN connections or when you want to stay under a specific threshold. Pairing `--min-rate` and `--max-rate` together gives you a controlled speed range — fast enough to finish, slow enough not to drop packets or trigger rate limiting.
+
+```bash
 # Scan multiple hosts simultaneously
 nmap -sV --min-parallelism 100 192.168.1.0/24
 
 # Disable DNS resolution — speeds up scans significantly
 nmap -n -p- --min-rate 5000 <target>
 ```
-
 ---
 
 *by SudoChef · Part of the SudoCode Pentesting Methodology Guide*

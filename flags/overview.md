@@ -18,6 +18,21 @@ Think of it like ordering at a restaurant. `nmap <target>` is just "I'll have so
 
 ---
 
+## 🔊 Understanding Noise Levels
+
+Every scan in this guide has a noise rating. Here's what each level means:
+
+| Level | Meaning |
+|---|---|
+| 🟢 Quiet | Minimal packets — unlikely to appear in logs or trigger alerts |
+| 🟡 Medium | Moderate traffic — may appear in logs, unlikely to trigger IDS |
+| 🟠 Loud | Significant traffic — likely to trigger IDS alerts on monitored networks |
+| 🔴 Noisy | Heavy traffic — will trigger alerts, may cause instability or false negatives |
+
+> 💡 **False negatives** happen when a scan misses something that's actually there. Going too fast causes packets to drop — open ports show as closed. Slower isn't just stealthier, it's more accurate.
+
+---
+
 ## ⚡ Scan Techniques
 
 | Flag | What it does | Noise Level | Notes |
@@ -26,8 +41,8 @@ Think of it like ordering at a restaurant. `nmap <target>` is just "I'll have so
 | `-sT` | TCP connect — full connection, more detectable | 🔴 Noisy | Default without root |
 | `-sU` | UDP scan — slow but finds things TCP misses | 🟡 Medium | Always worth running |
 | `-sn` | Ping sweep — host discovery only, no port scan | 🟢 Quiet | Great for subnet recon |
-| `-sV` | Version detection — what software is running | 🟡 Medium | Essential on every scan |
-| `-sC` | Default scripts — automated common checks | 🟡 Medium | Pairs with `-sV` always |
+| `-sV` | Version detection — what software is running | 🟠 Loud | Essential on every scan |
+| `-sC` | Default scripts — automated common checks | 🟠 Loud | Pairs with `-sV` always |
 | `-A` | Aggressive — OS, version, scripts, traceroute | 🔴 Noisy | CTF only |
 | `-sN` | Null scan — no flags set | 🟢 Quiet | Evades some firewalls |
 | `-sF` | FIN scan — only FIN flag set | 🟢 Quiet | Evades some firewalls |

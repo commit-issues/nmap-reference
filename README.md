@@ -150,7 +150,7 @@ Always save your output. You will need it later.
 | 53 | DNS | Try zone transfer: `dig axfr @<target>` |
 | 80 | HTTP | Open in browser, run Nikto, gobuster |
 | 110 | POP3 | Email — try default creds |
-| 139/445 | SMB | Run `enum4linux`, check for EternalBlue |
+| 139/445 | SMB | Run `enum4linux` (legacy — prefer `enum4linux-ng` or `netexec`), check for EternalBlue |
 | 443 | HTTPS | Same as 80 — check cert for info |
 | 3306 | MySQL | Try `mysql -u root -h <target>` |
 | 3389 | RDP | Remote Desktop — check for BlueKeep |
