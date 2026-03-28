@@ -153,7 +153,9 @@ Always save your output. You will refer back to it constantly.
 | `-oA scan` | All three formats at once — use this as your default |
 | `-v` | Verbose — shows results as they come in |
 | `-vv` | Very verbose — even more detail |
+| `-vvv` | Maximum verbosity — everything nmap is doing in real time. Most references skip this one |
 | `--open` | Only show open ports — cuts noise from filtered/closed |
+| `--reason` | Shows exactly why nmap marked each port as open, closed, or filtered — essential for understanding scan results and debugging unexpected output. More useful in real-world engagements than CTF but worth knowing either way |
 
 ---
 
