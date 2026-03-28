@@ -66,6 +66,8 @@ These are the most useful named scan combinations. Pick the one that fits your s
 <details>
 <summary><strong>⚡ Scan Techniques</strong></summary>
 
+🟢 Quiet | 🟡 Medium | 🟠 Loud | 🔴 Noisy
+
 | Flag | What it does | Noise Level |
 |---|---|---|
 | `-sS` | SYN scan — half-open, fast, stealthy | 🟡 Medium |
@@ -75,6 +77,9 @@ These are the most useful named scan combinations. Pick the one that fits your s
 | `-sV` | Version detection — what software is running | 🟡 Medium |
 | `-sC` | Default scripts — runs common nmap scripts | 🟡 Medium |
 | `-A` | Aggressive — OS detection, version, scripts, traceroute | 🔴 Noisy |
+| `-v` | Verbose — shows results as ports are found | 🟢 Quiet |
+| `-vv` | More verbose — more detail during the scan | 🟢 Quiet |
+| `-vvv` | Maximum verbosity — everything nmap is doing in real time (most references skip this one) | 🟢 Quiet |
 
 </details>
 
@@ -198,6 +203,11 @@ nmap -sU --top-ports 20 <target>
 
 # Web enumeration
 nmap -sV -p 80,443,8080 --script http-enum <target>
+
+# Verbosity — add to any scan
+nmap -sV -sC -v <target>        # see results as they come in
+nmap -sV -sC -vv <target>       # more detail
+nmap -sV -sC -vvv <target>      # maximum — nothing hidden
 ```
 
 ---
