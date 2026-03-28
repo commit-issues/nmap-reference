@@ -95,6 +95,46 @@ nc <target> 4444 < file_to_send
 
 ---
 
+### ⚡ NetExec
+
+The actively maintained successor to CrackMapExec (CME). Where CME left off, NetExec picks up — faster, more reliable, and actively developed. Used for SMB, LDAP, WinRM, SSH, and RDP enumeration and credential testing across networks. If you are doing any Windows or Active Directory work, this is in your toolkit.
+
+**Install:**
+```bash
+# Kali Linux
+sudo apt install netexec
+
+# pip
+pip3 install netexec
+```
+
+**Basic usage:**
+```bash
+# SMB host discovery across subnet
+netexec smb 192.168.1.0/24
+
+# Check for null sessions
+netexec smb <target> -u '' -p ''
+
+# Enumerate shares
+netexec smb <target> -u user -p password --shares
+
+# Check for SMB signing (important for relay attacks)
+netexec smb 192.168.1.0/24 --gen-relay-list relay.txt
+
+# WinRM enumeration
+netexec winrm <target> -u user -p password
+
+# LDAP enumeration
+netexec ldap <target> -u user -p password --users
+```
+
+**Resources:**
+- Docs: https://www.netexec.wiki/
+- Kali: https://www.kali.org/tools/netexec/
+
+---
+
 ## 🗺️ More Documentation Coming
 
 This is just the beginning. More tool references, methodology guides, and deep dives are on the way — all part of the SudoCode Pentesting Methodology Guide series.
@@ -104,7 +144,7 @@ Follow along and reach out directly:
 - 📸 Instagram: [@sudochef](https://www.instagram.com/sudochef)
 - 🎵 TikTok: [@sudochef](https://www.tiktok.com/@sudochef)
 
-Have questions, found something useful, or want to see a specific tool covered next? Slide into the DMs — always happy to connect with people learning security. 🌸
+Have questions, found something useful, or want to see a specific tool covered next? Slide into the DMs — always happy to connect with people learning security. 
 
 ---
 
